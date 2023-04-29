@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js webpage</title>
+    <style>
+        .div1{
+            text-align: center;
+            background-color: greenyellow;
+            width: 70%;
+            margin: 150px;
+            padding: 15px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <h1 class="jj">JAmaze Technologies</h1>
+        <form name="login" method="post" action="javascript2.html">
+            <label for="name">Leave us a message:</label><br>
+            <textarea rows="10" cols="30" name="msg" form="msg"> Enter text here...</textarea><br><br>
+            <input type="button" onclick="instructions()" value="SEND">
+            <input type="button" onclick="instructions1()" value="GO BACK">
+        </form>
+        <footer>
+            <h4>contact us on</h4>
+            <a href="https://wa.me/09081513958" target="_blank"><img src="/whatsapp.jpeg" alt="whatsapp pics" style="width: 50px; height: auto;"></a>
+            <a href="https://www.facebook.com/mercy.amaefule.31" target="_blank"><img src="/facebook.jpg" alt="whatsapp pics" style="width: 50px; height: auto;"></a>
+        </footer>
+    </div>
+
+
+    <script>
+        var name = prompt("Enter your username");
+            alert("Welcome " + name + " to my website");
+        
+    
+        function instructions(){
+            alert("We have recieved your message, "+name+" We'll get back to your shortly");
+        }
+        function instructions1(){
+           const ques = (confirm("Are you sure to exit?"));
+           if(ques){
+              history.back();
+           }
+           else{
+             console.log("NOTHING");
+           }
+        }  
+        
+
+    </script>
+</body>
+
+</html>

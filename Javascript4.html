@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /*background-image: url(backgroundpic.jpg);*/
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .as {
+            font-size: 3ch;
+            color: rgb(249, 11, 11);
+        }
+
+        #tele {
+            text-align: center;
+        }
+
+        .input_control {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input_control input {
+            border: 4px solid black;
+            border-radius: 10px;
+            display: block;
+            font-size: medium;
+            padding: 10px;
+            width: 40%;
+        }
+        .input{
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .input_control input:focus {
+            outline: 0;
+        }
+
+        .input_control.success input {
+            border-color: rgb(66, 251, 66);
+
+        }
+
+        .input_control.error input {
+            border-color: rgb(253, 26, 26);
+        }
+
+        .input_control.error {
+            color: rgb(253, 26, 26);
+            font-size: 15px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Fill in this form correctly in CAPITAL LETTERS</h2>
+    <form method="get" action="/form_submitted.html" autocomplete="on">
+        <div class="input_control">
+            <span class="as">*</span>
+            <label for="s_name">Surname:</label><br>
+            <input type="text" id="s_name" name="s_name"><br><br>
+            <div class="error"></div><br><br>
+        </div>
+        <div class="input_control">
+            <span class="as">*</span>
+            <label for="name">First Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <div class="error"></div><br><br>
+        </div>
+        <div class="input_control">
+            <span class="as">*</span>
+            <label for="m_name">Middle Name:</label><br>
+            <input type="text" id="m_name" name="m_name"><br><br>
+            <div class="error"></div><br><br>
+        </div>
+        <div class="input_control">
+            <span class="as">*</span>
+            <label for="mail">Email Address:</label><br>
+            <input type="email" id="mail" name="mail"><br><br>
+            <div class="error"></div><br><br>
+        </div>
+        <div class="input_control">
+            <span class="as">*</span>
+            <label for="tele">Phone-Number:</label><br>
+            <input type="tel" id="tele" name="tele"><br><br>
+            <div class="error"></div><br><br>
+        </div>
+        <div class="input_control">
+            <span class="as">*</span>
+            <label for="contact">Contact Address:</label><br>
+            <input type="text" id="contact" name="contact"><br><br>
+            <div class="error"></div><br><br>
+        </div>
+        <input type="reset" value="RESET">
+        <input type="submit" value="SUBMIT">
+    </form>
+    <script>
+        const surname = document.querySelector('#s_name').value;
+        const fname = document.querySelector('#name').value;
+        const mname = document.querySelector('#m_name').value;
+        const mail = document.querySelector('#mail').value;
+        const tele = document.querySelector('#tele').value;
+        const contact = document.querySelector('#contact').value;
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            if (validate()) {
+                sendRequest();
+            }
+
+        });
+        //ajax request to overide preventDefault()
+        function sendRequest() {
+
+            let formData = new FormData(form);
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('POST', '/CSC223PROJECTS/saved_data.php', true);
+
+            xhr.send(formData);
+
+            xhr.addEventListener('readystatechange', () => {
+                if (xhr.DONE && xhr.status === 200) {
+                    window.location.href = "form_submitted.html";
+                }
+            });
+
+
+        }
+
+
+        const set_error = (element, message) => {
+            const input_control = element.parentElement;
+            const error_display = input_control.querySelector('.error');
+
+            error_display.innerText = message;
+            input_control.classList.add('error');
+            input_control.classList.remove('success');
+        }
+        const set_success = element => {
+            const input_control = element.parentElement;
+            const error_display = input_control.querySelector('.error');
+
+            error_display.innerText = '';
+            input_control.classList.remove('error');
+            input_control.classList.add('success');
+        }
+
+        const isValidemail = email => {
+            const pattern = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+            return pattern;
+        }
+        const isValidtel = tel => {
+            const pattern = /^(0)(7|8|9){1}(0|1){1}[0-9]{8}/;
+            return pattern;
+        }
+        const isValidname = name => {
+            const pattern = /^[A-Z]{20}$/;
+            return pattern;
+        }
+
+        const validate = () => {
+            let validRequest = true;
+            const surnameV = document.querySelector('#s_name').value.trim();
+            const fnameV = document.querySelector('#name').value.trim();
+            const mnameV = document.querySelector('#m_name').value.trim();
+            const mailV = document.querySelector('#mail').value.trim();
+            const teleV = document.querySelector('#tele').value.trim();
+            const contactV = document.querySelector('#contact').value.trim();
+
+            if (teleV === '') {
+                set_error(tele, 'Phone-number is required');
+                validRequest = false;
+            }
+            else if (!isValidtel(teleV)) {
+                set_error(tele, 'Enter a valid Phone-number');
+                validRequest = false;
+            }
+            else {
+                set_success(tele);
+            }
+
+            if (mailV === '') {
+                set_error(mail, 'Email is required');
+                validRequest = false;
+            }
+            else if (!isValidemail(mailV)) {
+                set_error(mail, 'Enter a valid Email Address');
+                validRequest = false;
+            }
+            else {
+                set_success(mail);
+            }
+            if (fnameV === '') {
+                set_error(fname, 'First Name is required');
+                validRequest = false;
+            }
+            else if (!isValidname(mailV)) {
+                set_error(fname, 'Enter a valid Name');
+                validRequest = false;
+            }
+            else {
+                set_success(fname);
+            }
+            if (surnameV === '') {
+                set_error(surname, 'Surname Name is required');
+                validRequest = false;
+            }
+            else if (!isValidname(mailV)) {
+                set_error(surname, 'Enter a valid Name');
+                validRequest = false;
+            }
+            else {
+                set_success(fname);
+            }
+            if (mnameV === '') {
+                set_error(mname, 'Middle Name is required');
+                validRequest = false;
+            }
+            else if (!isValidname(mailV)) {
+                set_error(mname, 'Enter a valid Name');
+                validRequest = false;
+            }
+            else {
+                set_success(mname);
+            }
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

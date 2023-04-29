@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Information</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 10;
+            padding: 5;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li> <a href="/parent_reg.html">BACK</a></li>
+    </ul>
+    <form method="get" action="/form_submitted.html">
+        <fieldset>
+            <legend> Educational Information </legend>
+            <label for="sch">Current school:</label>
+            <input type="text" id="sch" name="sch" value=" JAmaze Academy "><br><br>
+            <label for="tel">Prncipal's phone number:</label>
+            <input type="tel" id="tel" name="tel"><br><br>
+            <label for="level"> Current level:</label>
+            <select name="level" id="level">
+                <option value="Grade 1-5">Grade 1-5</option>
+                <option value="Grade 6-9">Grade 6-9</option>
+                <option value="Grade 10-12">Grade 10-12</option>
+                <option>A Level</option>
+                <option>O Level</option>
+            </select><br><br>
+            <label for="stack"> Interested Stack:</label>
+            <input type="radio" id="stack" name="stack">
+            <label for="stack"> Mobile app</label>
+            <input type="radio" id="stack2" name="stack">
+            <label for="stack2">Web app</label>
+            <input type="radio" id="stack3" name="stack">
+            <label for="stack3"> Desktop app</label>
+            <input type="radio" id="stack4" name="stack">
+            <label for="stack4"> UI/UX design</label><br><br>
+            <label for="level"> Preferred programming language:</label><br>
+            <input type="checkbox" id="program1" name="program1">
+            <label for="program1"> Java</label><br>
+            <input type="checkbox" id="program2" name="program2">
+            <label for="program2"> Javascript</label><br>
+            <input type="checkbox" id="program3" name="program3">
+            <label for="program3"> python</label><br>
+            <input type="checkbox" id="program4" name="program4">
+            <label for="program4"> Swift</label><br>
+            <input type="checkbox" id="program5" name="program5">
+            <label for="program5"> C#</label><br>
+            <input type="checkbox" id="program6" name="program6">
+            <label for="program6"> Perl</label><br>
+            <input type="checkbox" id="program7" name="program7">
+            <label for="program7"> HTML and CSS</label><br>
+            <input type="checkbox" id="program8" name="program8">
+            <label for="program8"> Other</label><br><br>
+            <label for="list">If 'other' specify</label>
+            <input type="text" id="list" name="list" value=" C "><br><br>
+            <label for="level"> Do you have any experience?:</label>
+            <select name="exp" id="exp">
+                <option value="Yes">YES</option>
+                <option value="No">NO</option>
+            </select><br><br>
+            <label for="level"> Years of experience:</label>
+            <select name="years" id="years">
+                <option value="0">None</option>
+                <option value="1">Less than a year</option>
+                <option value="2"> A year</option>
+                <option value="3"> 2 years</option>
+                <option value="4"> More than 2 years</option>
+            </select><br><br>
+            <input type="submit" value="SUBMIT">
+        </fieldset>
+    </form>
+    
+</body>
+</html>

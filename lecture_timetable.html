@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Timetable</title>
+</head>
+<style>
+    tr, th, td{
+        border: 2px solid black;
+        border-collapse: collapse;
+        width: auto;
+        padding: 15px;
+        padding-right: 100px;
+    }
+    th{
+        background-color: #7d5b5b;
+    }
+    .core{
+        background-color:#666666;
+        color: white;
+        border-color: brown;
+    }
+    .elective{
+        background-color: #9a3e3e;
+        color: black;
+        border-color: brown;
+    }
+    .head{
+        color: #4c1010;
+        text-align: center;
+    }
+</style>
+<body>
+    <h2 class="head">My Lecture Timetable</h2>
+    <table style="border-collapse: collapse;padding: 15px;width: auto; padding-right: 100px;border: 2px solid black;margin-left:10%;">
+        <tr>
+            <th> Time </th>
+            <th> Monday</th>
+            <th> Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <th>08:00 - 09:00</th>
+            <td rowspan="2" class="core"> CSC 224</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="core">ESP 221</td>
+        </tr>
+        <tr>
+            <th>09:00 - 10:00</th>
+            <td rowspan="2" class="elective"> MTH 221 </td>
+            <td></td>
+            <td rowspan="3" class="core"> CSC 223P</td>
+            <td rowspan="3" class="core"> CSC 221P</td>
+        </tr>
+        <tr>
+            <th>10:00 - 11:00</th>
+            <td></td>
+            <td rowspan="2" class="core">CSC 225</td>
+        </tr>
+        <tr>
+            <th>11:00 - 12:00</th>
+            <td rowspan="2" class="core">CSC 223</td>
+        </tr>
+        <tr>
+            <th>12:00 - 13:00</th>
+            <td></td>
+            <td rowspan="2" class="elective"> CSC 222</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>13:00 - 14:00</th>
+            <td></td>
+            <td rowspan="2" class="core"> CSC 228</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>14:00 - 15:00</th>
+            <td class="core">CSC 225</td>
+            <td class="core">CSC 228</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>15:00 - 16:00</th>
+            <td rowspan="2" class="core">CSC 221</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>16:00 - 17:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

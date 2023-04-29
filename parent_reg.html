@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guardian registration page</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 10;
+            padding: 5;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li> <a href="/reg_app.html">BACK</a></li>
+    </ul>
+    <form method="get" action="/edu_reg.html">
+        <fieldset>
+            <legend> Guardian General Information </legend>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" value="First name"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" value="Last name"><br><br>
+            <label for="mail">Email Address:</label>
+            <input type="email" id="mail" name="mail" value=" Jamazetech@gmail.com "><br><br>
+            <label for="DOB">Date of birth:</label>
+            <input type="date" id="DOB" name="DOB"><br><br>
+            <label for="gender1">Gender:</label>
+            <input type="radio" id="male" name="gender">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender"> 
+            <label for="female">Female</label><br><br>
+            <label for="mstatus"> Marital status: </label>
+            <input type="radio" id="single" name="marital">
+            <label for="single"> Single</label>
+            <input type="radio" id="married" name="marital">
+            <label for="married">Married</label>
+            <input type="radio" id="divorce" name="marital">
+            <label for="divorce">Divorced</label><br><br>
+            <label for="tel">Phone Number:</label>
+            <input type="tel" id="tel" name="tel"><br><br>
+            <label for="address1">Residential address:</label>
+            <input type="text" id="address1" name="address1"><br><br>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state"><br><br>
+            <label for="lga">LGA:</label>
+            <input type="text" id="lga" name="lga"><br><br>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country"><br><br>
+            <label for="status"> Employment status: </label>
+            <input type="radio" id="emp" name="Employment">
+            <label for="emp"> Employed</label>
+            <input type="radio" id="un_emp" name="Employment">
+            <label for="un_emp">Un-employed</label>
+            <input type="radio" id="self_emp" name="Employment">
+            <label for="self_emp">Self-employed</label><br><br>
+            <label for="address2">Office address:</label>
+            <input type="text" id="address2" name="address2"><br><br>
+            <input type="submit" value="NEXT">
+
+        </fieldset>
+
+    </form>
+    
+</body>
+</html>

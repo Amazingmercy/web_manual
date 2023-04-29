@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Form</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 12%;
+            background-color: rgb(248, 185, 248);
+        }
+
+        input,
+        button {
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        h2,
+        #button {
+            color: rgb(138, 50, 138);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Create password</h2>
+    <form method="post" action="/form_submitted.html">
+        <label for="pass">New Password:</label><br>
+        <input type="password" id="pass" name="pass" oninput=" return check_password()"><br><br>
+        <span id="message" style="color: red"></span><br>
+        <label for="n_pass"> confirm Password: </label><br>
+        <input type="password" id="n_pass" name="n_pass" oninput=" return check_password()"><br><br>
+        <button id="button" onclick="return validate()"> SUBMIT </button>
+    </form>
+
+    <script>
+        function check_password() {
+            const password = document.querySelector("#pass").value;
+            const n_password = document.querySelector("#n_pass").value;
+
+            if (password.length < 8) {
+                document.querySelector("#message").textContent = "password should be atleast 8 characters";
+                return false;
+            }
+            else if (password.length > 10) {
+                document.querySelector("#message").textContent = "password should not exceed 10 characters";
+                return false;
+            }
+            else {
+                document.querySelector("#message").textContent = "Correct password!";
+            }
+        }
+
+
+        function validate() {
+            const password = document.querySelector("#pass").value;
+            const n_password = document.querySelector("#n_pass").value;
+            if (password.length < 1) {
+                document.querySelector("#message").textContent = "*Fill in the password!";
+                return false;
+            }
+            else {
+                if (password == n_password) {
+                    alert("Password Successfully created");
+                    return true;
+                }
+                else {
+                    alert("Passwords do not match");
+                    return false;
+                }
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

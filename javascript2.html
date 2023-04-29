@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript II</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 85);
+            color: brown;
+            text-align: center;
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 10%;
+        }
+
+        #score,
+        button {
+            border-radius: 10px;
+            padding: 7px;
+        }
+
+        input {
+            text-align: center;
+        }
+
+
+        button:hover {
+            background-color: brown;
+        }
+
+        #greet {
+            color: brown;
+            text-align: center;
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', "Calibri", 'Trebuchet MS', sans-serif;
+            padding: 15px;
+        }
+    </style>
+
+</head>
+
+<body onload="greet()">
+    <div>
+        <p id="greet"></p>
+        <h2>GRADING SYSTEM</h2>
+        <p>Enter your total score for CSC 223</p>
+        <input id="score"><br><br>
+        <button onclick="my_function()"> ENTER</button>
+        <p id="grade"></p>
+    </div>
+    <script>
+        function my_function() {
+            let grade = document.querySelector("#grade");
+            let score = document.querySelector("#score").value;
+            if (score.length < 1) {
+                grade.textContent = "Enter a value";
+            }
+            else {
+                if (score >= 70 && score <= 100)
+                    grade.textContent = "You got an A!";
+                else if (score < 70 && score >= 60)
+                    grade.textContent = "You got a B!";
+                else if (score < 60 && score >= 50)
+                    grade.textContent = "You got a C!";
+                else if (score < 50 && score >= 40)
+                    grade.textContent = "You got a D!";
+                else if (score < 40 && score >= 30)
+                    grade.textContent = "You got an E!";
+                else if (score < 30)
+                    grade.textContent = "You got an F!";
+                else
+                    grade.textContent = "You Entered an incorrect score, Enter a score between 0-100";
+            }
+        }
+
+        function greet() {
+            let message = document.querySelector("#greet");
+            let now = new Date();
+            if (now.getHours() > 4 && now.getHours() <= 11)
+                message.textContent = "Good Morning! ";
+            else if (now.getHours() > 11 && now.getHours() <= 16)
+                message.textContent = "Good Afternoon! ";
+            else if (now.getHours() > 16 && now.getHours() <= 20)
+                message.textContent = "Good Evening! ";
+            else
+                message.textContent = "Good Night! ";
+        }
+
+    </script>
+
+</body>
+
+</html>

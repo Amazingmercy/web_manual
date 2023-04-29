@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            place-items: center;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /*iframe {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+        }*/
+
+        #first {
+            width: 100%;
+            height: 40vh;
+        }
+
+        #second {
+            width: 70%;
+            height: 40vh;
+        }
+
+        #third {
+            width: 30%;
+            height: 40vh;
+        }
+        .sec{
+            display: flex;
+            width: 90%;
+        }
+        .fir{
+            width: 90%;
+            place-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fir">
+    <iframe id="first" style="align-content: center;" src="banner.html" title="LOGO"></iframe>
+    </div>   
+    <div class="sec">
+    <iframe row="100" col="150" id="third" src="navigation_bar.html" title="LINKS"></iframe>
+    <iframe row="100" col="150" id="second" src="main_content.html" title="MAIN CONTENT"></iframe>
+    </div>
+
+</body>
+
+</html>

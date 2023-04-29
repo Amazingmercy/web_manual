@@ -1,0 +1,13 @@
+1. Point to an external Javascript file using the script tag
+<script src="#file"></script>
+The external Javascript file will not have the script tag
+The script tag should be at the end of the body for efficiency of html and css scripts
+
+b. Write your Javascript script within the html file using the script tag 
+   No need to add a "src" file to it.
+   Script tag should also be at the end of the body.
+   
+2. Add an event listener to the submit button that will activate the message after button is clicked and form is filled.
+
+   
+

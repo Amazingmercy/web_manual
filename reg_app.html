@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Application page </title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 10;
+            padding: 5;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h2>JAmaze Tech Academy</h2>
+    <h3>Student registration page</h3>
+    <ul>
+        <li> <a href="/reg_app.html">Student Information</a></li>
+        <li> <a href="/parent_reg.html"> Parent Information</a></li>
+        <li> <a href="/edu_reg.html"> Educational Information</a></li>
+    </ul>
+    <form method="get" action="/parent_reg.html">
+        <fieldset>
+            <legend> Student General Information </legend>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" value="First name"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" value="Last name"><br><br>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="mail" value="Jamazetech@gmail.com"><br><br>
+            <label for="DOB">Date of birth:</label>
+            <input type="date" id="DOB" name="DOB"><br><br>
+            <label for="gender1">Gender:</label>
+            <input type="radio" id="male" name="gender">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender">
+            <label for="female">Female</label><br><br>
+            <label for="tel">Phone Number:</label>
+            <input type="tel" id="tel" name="tel"><br><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address"><br><br>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state"><br><br>
+            <label for="lga">LGA:</label>
+            <input type="text" id="lga" name="lga"><br><br>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country"><br><br>
+            <input type="submit" value="NEXT">
+
+        </fieldset>
+
+    </form>
+    
+</body>
+</html>
